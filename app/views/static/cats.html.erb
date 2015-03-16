@@ -1,0 +1,5 @@
+<h1>Cats</h1>
+<p>Look at all these cute cats!</p>
+<% @cats.each do |cat| %>
+  <img src="<%= cat.url %>" alt="Cat pic">
+<% end %>
