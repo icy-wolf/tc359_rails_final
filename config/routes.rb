@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :wolves
+
+  resources :recyclers
+
   root 'static#home'
 
   get '/about' => 'static#about'

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wolves</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Pack rank</th>
+      <th>Pack number</th>
+      <th>Isalive</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wolves.each do |wolf| %>
+      <tr>
+        <td><%= wolf.name %></td>
+        <td><%= wolf.species %></td>
+        <td><%= wolf.pack_rank %></td>
+        <td><%= wolf.pack_number %></td>
+        <td><%= wolf.isAlive %></td>
+        <td><%= link_to 'Show', wolf %></td>
+        <td><%= link_to 'Edit', edit_wolf_path(wolf) %></td>
+        <td><%= link_to 'Destroy', wolf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wolf', new_wolf_path %>

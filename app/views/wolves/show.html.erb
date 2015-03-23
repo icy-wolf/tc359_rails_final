@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wolf.name %>
+</p>
+
+<p>
+  <strong>Species:</strong>
+  <%= @wolf.species %>
+</p>
+
+<p>
+  <strong>Pack rank:</strong>
+  <%= @wolf.pack_rank %>
+</p>
+
+<p>
+  <strong>Pack number:</strong>
+  <%= @wolf.pack_number %>
+</p>
+
+<p>
+  <strong>Isalive:</strong>
+  <%= @wolf.isAlive %>
+</p>
+
+<%= link_to 'Edit', edit_wolf_path(@wolf) %> |
+<%= link_to 'Back', wolves_path %>
