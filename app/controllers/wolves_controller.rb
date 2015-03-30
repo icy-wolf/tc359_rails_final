@@ -69,6 +69,6 @@ class WolvesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wolf_params
-      params.require(:wolf).permit(:name, :species, :pack_rank, :pack_number, :isAlive)
+      params.require(:wolf).permit(:name, :species, :pack_rank, :pack_number, :is_alive)
     end
 end

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150323154149) do
     t.text     "species"
     t.text     "pack_rank"
     t.integer  "pack_number"
-    t.boolean  "isAlive"
+    t.boolean  "is_alive"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

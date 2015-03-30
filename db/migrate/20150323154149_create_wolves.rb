@@ -5,7 +5,7 @@ class CreateWolves < ActiveRecord::Migration
       t.text :species
       t.text :pack_rank
       t.integer :pack_number
-      t.boolean :isAlive
+      t.boolean :is_alive
 
       t.timestamps null: false
     end
