@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project10Rails</title>
+  <title>Project12Rails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,6 +16,19 @@
       <li><%= link_to 'Recyclers Directory', recyclers_path %></li>
 		</ul>
 	</div>
+
+  <% if user_signed_in? %>
+    <li>Signed in in as <%= current_user.email %></li>
+    <li><%= link_to "Sign Out", sign_out_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to "Sign In", sign_in_path %></li>
+  <% end %>
+
+  <% flash.each do |type, message| %>
+    <div class="<%= type %>">
+      <p><%= message %></p>
+    </div>
+  <% end %>
 	
 <%= yield %>
 

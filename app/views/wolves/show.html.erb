@@ -25,5 +25,7 @@
   <%= @wolf.is_alive %>
 </p>
 
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_wolf_path(@wolf) %> |
+<% end %>
 <%= link_to 'Back', wolves_path %>

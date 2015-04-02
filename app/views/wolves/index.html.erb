@@ -23,8 +23,10 @@
         <td><%= wolf.pack_number %></td>
         <td><%= wolf.is_alive %></td>
         <td><%= link_to 'Show', wolf %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_wolf_path(wolf) %></td>
         <td><%= link_to 'Destroy', wolf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,6 @@
 
 <br>
 
+<% if user_signed_in? %>
 <%= link_to 'New Wolf', new_wolf_path %>
+<% end %>

@@ -1,4 +1,5 @@
 class WolvesController < ApplicationController
+  before_action :only_allow_signed_in_users, except: [:index, :show]
   before_action :set_wolf, only: [:show, :edit, :update, :destroy]
 
   # GET /wolves
