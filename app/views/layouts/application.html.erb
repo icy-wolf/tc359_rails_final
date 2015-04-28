@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project12Rails</title>
+  <title>Tc359 Final Project</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="navcontainer">
-		<ul id="navlist">
-		  <li><%= link_to 'Home', root_path %></li>
-		  <li><%= link_to 'About', about_path %></li>
-		  <li><%= link_to 'Cat Pictures', cat_pictures_path %></li>
-      <li><%= link_to 'Wolves Directory', wolves_path %></li>
-      <li><%= link_to 'Recyclers Directory', recyclers_path %></li>
-		</ul>
-	</div>
+	<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'Wolves Directory', wolves_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%= link_to "Signed in as " + current_user.email %></li>
+            <li><%= link_to "Sign Out", sign_out_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign In", sign_in_path %></li>
+          <% end %>
+        </ul>
+      </div>
+  	</div>
+  </nav>
 
-  <% if user_signed_in? %>
-    <li>Signed in in as <%= current_user.email %></li>
-    <li><%= link_to "Sign Out", sign_out_path, method: :delete %></li>
-  <% else %>
-    <li><%= link_to "Sign In", sign_in_path %></li>
-  <% end %>
-
-  <% flash.each do |type, message| %>
-    <div class="<%= type %>">
-      <p><%= message %></p>
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <% flash.each do |type, message| %>
+          <div class="<%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
-  <% end %>
-	
-<%= yield %>
+  </div>
 
 </body>
 </html>

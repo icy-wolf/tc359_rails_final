@@ -1,14 +1,25 @@
-<h1>Log In</h1>
-<%= form_tag sessions_path do %>
-<div class="field">
-  <%= label_tag :email %><br>
-  <%= text_field_tag :email %>
+<div class="col-lg-6">
+  <h1>Log In</h1>
+  <%= form_tag sessions_path do %>
+  <div class="input-group">
+    <%= label_tag :email %><br>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="input-group">
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  </div>
+    <div class="actions">
+    <br><%= submit_tag "Log In" %>
+  </div>
+  <% end %>
 </div>
-  <div class="field">
-  <%= label_tag :password %><br>
-  <%= password_field_tag :password %>
+<div class="col-lg-6">
+<h1>Register</h1>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.button :submit %>
+  <% end %>
 </div>
-  <div class="actions">
-  <%= submit_tag "Log In" %>
-</div>
-<% end %>

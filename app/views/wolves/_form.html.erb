@@ -1,37 +1,8 @@
-<%= form_for(@wolf) do |f| %>
-  <% if @wolf.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@wolf.errors.count, "error") %> prohibited this wolf from being saved:</h2>
-
-      <ul>
-      <% @wolf.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_area :name %>
-  </div>
-  <div class="field">
-    <%= f.label :species %><br>
-    <%= f.text_area :species %>
-  </div>
-  <div class="field">
-    <%= f.label :pack_rank %><br>
-    <%= f.text_area :pack_rank %>
-  </div>
-  <div class="field">
-    <%= f.label :pack_number %><br>
-    <%= f.number_field :pack_number %>
-  </div>
-  <div class="field">
-    <%= f.label :is_alive %><br>
-    <%= f.check_box :is_alive %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for @wolf do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species %>
+  <%= f.input :pack_rank %>
+  <%= f.input :pack_number %>
+  <%= f.input :is_alive %>
+  <%= f.button :submit %>
 <% end %>
