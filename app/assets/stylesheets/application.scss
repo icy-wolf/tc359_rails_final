@@ -14,3 +14,9 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import "lib/scaffolds.scss";
+@import "lib/layouts/base.scss";
+
+@import "wolf/show.scss";
+@import "wolf/new.scss";
